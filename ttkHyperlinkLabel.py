@@ -132,6 +132,7 @@ def openurl(url):
         # On Windows webbrowser.open calls os.startfile which calls ShellExecute which can't handle long arguments,
         # so discover and launch the browser directly.
         # https://blogs.msdn.microsoft.com/oldnewthing/20031210-00/?p=41553
+
         hkey = HKEY()
         cls  = 'http'
         if not RegOpenKeyEx(HKEY_CURRENT_USER, r'Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice', 0, KEY_READ, ctypes.byref(hkey)):
